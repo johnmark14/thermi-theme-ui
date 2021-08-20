@@ -5,8 +5,8 @@ html {
 }
 
 *, *::before *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -21,6 +21,18 @@ body {
 
 a, a:visited, a:hover {
   text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+div {
+  overflow: hidden;
 }
 
 .flex {
@@ -73,6 +85,15 @@ a, a:visited, a:hover {
           align-items: flex-start;
 }
 
+.header__logo {
+  display: inline-block;
+  width: 7.25rem;
+}
+
+.header__logo img {
+  width: 100%;
+}
+
 .header__nav-hamburger > span {
   display: block;
   width: 27px;
@@ -97,11 +118,43 @@ a, a:visited, a:hover {
   height: 24px;
 }
 
-.header__logo {
-  display: inline-block;
-  width: 7.25rem;
+.header__nav-wrapper {
+  height: 100vh;
+  border: 1px solid #989898;
 }
 
-.header__logo img {
+.header__nav-wrapper .content {
+  padding: 41px 40px 40px 40px;
+  width: 250px;
+}
+
+.header__nav-wrapper .content .menu-access li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.header__nav-wrapper .content .menu-access li a {
+  display: block;
   width: 100%;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 20px 0;
+  -webkit-transition: color .5s ease-in-out,  background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+  transition: color .5s ease-in-out,  background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+}
+
+.header__nav-wrapper .content .menu-access li a.linkDark {
+  background-color: #000;
+  color: #FFFFFF;
+}
+
+.header__nav-wrapper .content .menu-access li a.light {
+  background-color: #f7f7f7;
+  color: #989898;
+}
+
+.header__nav-wrapper .content .menu-access li a.light:hover {
+  background-color: #000;
+  color: #FFFFFF;
 }

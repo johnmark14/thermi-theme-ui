@@ -4,7 +4,7 @@ html {
 }
 
 *, *::before *::after {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,6 +20,19 @@ body {
 a, a:visited, a:hover {
     text-decoration: none;
 }
+
+ul {
+    padding: 0;
+
+    li {
+        list-style-type: none;
+    }
+}
+
+div {
+    overflow: hidden;
+}
+
 
 // Flexbox styles
 .flex {
