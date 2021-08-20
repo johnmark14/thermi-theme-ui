@@ -19,6 +19,10 @@ body {
   line-height: 1.3;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 a, a:visited, a:hover {
   text-decoration: none;
 }
@@ -119,8 +123,12 @@ div {
 }
 
 .header__nav-wrapper {
-  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 100vh;
   border: 1px solid #989898;
+  overflow-y: scroll;
 }
 
 .header__nav-wrapper .content {
@@ -157,4 +165,35 @@ div {
 .header__nav-wrapper .content .menu-access li a.light:hover {
   background-color: #000;
   color: #FFFFFF;
+}
+
+.header__nav-wrapper .content .navigation {
+  padding-top: 20px;
+}
+
+.header__nav-wrapper .content .navigation h4 {
+  font-size: 1.375rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.header__nav-wrapper .content .navigation h4 a {
+  color: #989898;
+}
+
+.header__nav-wrapper .content .navigation ul {
+  padding-left: 20px;
+}
+
+.header__nav-wrapper .content .navigation ul li {
+  margin-top: 30px;
+}
+
+.header__nav-wrapper .content .navigation ul a {
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #989898;
 }

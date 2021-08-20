@@ -48,8 +48,12 @@
 
         // Navigation
         &-wrapper {
-            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-height: 100vh;
             border: 1px solid $lightGray;
+            overflow-y: scroll;
 
             .content {
                 padding: 41px 40px 40px 40px;
@@ -88,12 +92,39 @@
                         }
                     }
                  }
+
+                //  Navigation links
+
+                .navigation {
+                    padding-top: 20px;
+                    h4 {
+                        font-size: toRem(22);
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        letter-spacing: 5px;
+                        
+                        a {
+                            color: $lightGray;
+                        }
+                    }
+
+                    ul {
+                        padding-left: 20px;
+                        li {
+
+                            margin-top: 30px;
+                        }
+
+                        a {
+                            font-size: toRem(18);
+                            font-weight: 400;
+                            letter-spacing: 2px;
+                            text-transform: uppercase;
+                            color: $lightGray;
+                        }
+                    }
+                }
             }
         }
     }
-    
-
-    
-
-
 }
