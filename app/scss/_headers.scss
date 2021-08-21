@@ -1,8 +1,7 @@
 .header {
-
     background-color: $white;
     position: fixed;
-    z-index: 999;
+    z-index: 100;
     width: 100%;
     
     &__inner {
@@ -48,16 +47,20 @@
 
         // Navigation
         &-wrapper {
+            // display: none;
             position: absolute;
             top: 0;
             left: 0;
             max-height: 100vh;
+            max-width: 340px;
             border: 1px solid $lightGray;
-            overflow-y: scroll;
+            background-color: $white;
+            z-index: 200;
+            overflow-y: scroll; // For scrolling
+
 
             .content {
-                padding: 41px 40px 40px 40px;
-                width: 250px;
+                padding: toRem(25) toRem(40) toRem(60) toRem(40);
 
                  .menu-access li {
 
@@ -65,6 +68,7 @@
                         margin-bottom: 5px;
                     }
 
+                    // Navigation Order & Login Button
                     a {
                         display: block;
                         width: 100%;
@@ -77,8 +81,12 @@
                         background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
 
                         &.linkDark {
-                            background-color: $black;
+                            background-color: $darkGray;
                             color: $white;
+
+                            &:hover {
+                                background-color: $black;
+                            }
                         }
 
                         &.light {
@@ -94,15 +102,14 @@
                  }
 
                 //  Navigation links
-
                 .navigation {
                     padding-top: 20px;
+                    // Navigation Heading = TOP
                     h4 {
                         font-size: toRem(22);
-                        font-weight: 700;
+                        font-weight: 400;
                         text-transform: uppercase;
                         letter-spacing: 5px;
-                        
                         a {
                             color: $lightGray;
                         }
@@ -111,16 +118,82 @@
                     ul {
                         padding-left: 20px;
                         li {
-
                             margin-top: 30px;
                         }
 
+                        // Navigation Main Links
                         a {
                             font-size: toRem(18);
                             font-weight: 400;
                             letter-spacing: 2px;
                             text-transform: uppercase;
                             color: $lightGray;
+                            transition: color .5s ease-in-out, 
+                            background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+
+                            &:hover {
+                                color: $black;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Footer
+            .footer {
+                background-color: $lightGray1;
+                padding: 41px 40px 40px 40px;
+                font-size: toRem(13);
+
+                &__links {
+                    padding-bottom: 70px;
+                    ul  li {
+                        // Footer Links
+                        a {
+                            font-weight: 500;
+                            letter-spacing: 2px;
+                            color: $darkGray;
+                            transition: color .5s ease-in-out, 
+                            background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+
+                            &:hover {
+                                color: $black;
+                                text-decoration: underline;
+                            }
+                        }
+                        &:not(:last-child) {
+                            padding-bottom: 15px;
+                        }
+                    }
+                }
+
+                &__logo {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-bottom: 20px;
+                }
+
+                &__socials {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    ul {
+                        width: 50%;
+                        display: flex;
+                        justify-content: space-around;
+
+                        li a {
+                            color: $lightGray;
+                            font-size: toRem(24);
+                            transition: color .5s ease-in-out, 
+                            background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+
+                            &:hover {
+                                color: $black;
+                            }
                         }
                     }
                 }
