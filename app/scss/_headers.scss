@@ -49,9 +49,10 @@
             position: absolute;
             top: 0;
             left: 0;
-            max-height: 100vh;
+            height: 100vh;
             z-index: 200;
             overflow-y: scroll; // For scrolling
+            -webkit-overflow-scrolling: touch;
         }
 
         &-main {
@@ -123,7 +124,7 @@
                         }
                         // Navigation Main Links
                         a {
-                            font-size: toRem(14);
+                            font-size: toRem(15);
                             font-weight: 700;
                             letter-spacing: 2px;
                             text-transform: uppercase;
@@ -212,6 +213,10 @@
         cursor: default;
         
         padding-left: toRem(360);
+
+        @include breakpoint-down(medium) {
+            padding-left: toRem(340);
+        }
         padding-top: toRem(45);
 
         span {
