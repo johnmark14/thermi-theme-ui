@@ -1,0 +1,27 @@
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: .75;
+    }
+}
+@keyframes fade-out {
+    from {
+        opacity: .75;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.fade-enter-active{
+    animation: fade-in .3s ease forwards;
+}
+
+
+.fade-leave-active {
+    animation: fade-out .3s ease forwards;
+}

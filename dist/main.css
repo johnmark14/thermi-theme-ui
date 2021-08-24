@@ -20,6 +20,7 @@ body {
   color: #989898;
   line-height: 1.3;
   height: 100%;
+  z-index: 5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -78,6 +79,52 @@ div {
   }
 }
 
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .75;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: .75;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: .75;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: .75;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-enter-active {
+  -webkit-animation: fade-in .3s ease forwards;
+          animation: fade-in .3s ease forwards;
+}
+
+.fade-leave-active {
+  -webkit-animation: fade-out .3s ease forwards;
+          animation: fade-out .3s ease forwards;
+}
+
 .header {
   background-color: #FFFFFF;
   position: fixed;
@@ -90,11 +137,26 @@ div {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 63.9375em) {
+  .header__inner {
+    padding: 1.125rem 1.25rem;
+  }
 }
 
 .header__logo {
   display: inline-block;
   width: 7.25rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 63.9375em) {
+  .header__logo {
+    width: 5rem;
+  }
 }
 
 .header__logo img {
@@ -112,6 +174,15 @@ div {
   margin-bottom: 7px;
 }
 
+@media (max-width: 63.9375em) {
+  .header__nav-hamburger > span {
+    width: 20px;
+  }
+  .header__nav-hamburger > span:not(:last-child) {
+    margin-bottom: 4.5px;
+  }
+}
+
 .header__nav-right a {
   display: inline-block;
 }
@@ -120,9 +191,22 @@ div {
   margin-right: 30px;
 }
 
+@media (max-width: 63.9375em) {
+  .header__nav-right a:not(:last-child) {
+    margin-right: 14px;
+  }
+}
+
 .header__nav-right a img {
   width: 24px;
   height: 24px;
+}
+
+@media (max-width: 63.9375em) {
+  .header__nav-right a img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .header__nav-wrapper {
@@ -131,8 +215,20 @@ div {
   left: 0;
   height: 100vh;
   z-index: 200;
-  overflow-y: scroll;
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  visibility: hidden;
+  -webkit-transition: all .3s ease .1s;
+  transition: all .3s ease .1s;
+}
+
+.header__nav-wrapper.showLeft {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  visibility: visible;
+  overflow-y: scroll;
 }
 
 .header__nav-main {
@@ -142,6 +238,12 @@ div {
 
 .header__nav-main .content {
   padding: 1.5625rem 2.5rem 4.8rem 2.5rem;
+}
+
+@media (max-width: 63.9375em) {
+  .header__nav-main .content {
+    padding: 0.9375rem 1.25rem 4.375rem 1.25rem;
+  }
 }
 
 .header__nav-main .content .menu-access li:not(:last-child) {
@@ -181,6 +283,12 @@ div {
 
 .header__nav-main .content .navigation {
   padding-top: 20px;
+}
+
+@media (max-width: 63.9375em) {
+  .header__nav-main .content .navigation {
+    padding-top: 25px;
+  }
 }
 
 .header__nav-main .content .navigation h4 {
@@ -225,6 +333,12 @@ div {
   background-color: #D6D6D6;
   padding: 41px 40px 40px 40px;
   font-size: 0.8125rem;
+}
+
+@media (max-width: 63.9375em) {
+  .header__nav-main .footer {
+    padding: 41px 35px 40px 35px;
+  }
 }
 
 .header__nav-main .footer__links {
@@ -302,39 +416,45 @@ div {
   opacity: .75;
   background-color: #000;
   cursor: default;
-  padding-left: 22.5rem;
-  padding-top: 2.8125rem;
 }
 
-@media (max-width: 63.9375em) {
-  .header .outer-overlay {
-    padding-left: 21.25rem;
-  }
+.header .outer-overlay .close-button {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-.header .outer-overlay span {
-  display: block;
+.header .outer-overlay .close-button span {
+  position: absolute;
+  top: 50px;
+  left: 355px;
   width: 27px;
   height: 2px;
   background-color: #FFFFFF;
-  -webkit-transform-origin: 7px 1px;
-          transform-origin: 7px 1px;
+  -webkit-transform-origin: 13px 1px;
+          transform-origin: 13px 1px;
 }
 
-.header .outer-overlay span:hover {
+@media (max-width: 63.9375em) {
+  .header .outer-overlay .close-button span {
+    left: 335px;
+  }
+}
+
+.header .outer-overlay .close-button span:hover {
   cursor: pointer;
 }
 
-.header .outer-overlay span:not(:last-child) {
+.header .outer-overlay .close-button span:not(:last-child) {
   margin-bottom: 7px;
 }
 
-.header .outer-overlay span:first-child {
+.header .outer-overlay .close-button span:first-child {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
 
-.header .outer-overlay span:last-child {
+.header .outer-overlay .close-button span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }

@@ -8,91 +8,97 @@
     <link rel="shortcut icon" href="/assets/images/kinto-favicon_32x32.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <script src="https://unpkg.com/vue@next"></script>
     <link rel="stylesheet" href="/dist/icofont.min.css">
     <link rel="stylesheet" href="/dist/main.css">
     <title>MARK IT BY KINTO</title>
 </head>
 
 <body>
-    
-    <!-- The Header -->
-    <header class="header">
-        <!-- Outer for Contrast -->
-        <a class="outer-overlay" href="/">
-            <span></span>
-            <span></span>
-        </a>
-        
-        <div class="header__inner flex flex-jc-sb">
-            <!-- Left Side Nav -->
-            <nav class="header__nav-main">
-                <a href="/" class="header__nav-hamburger">
-                    <span></span><span></span><span></span>
+    <div id="app">
+        <!-- The Header -->
+        <header class="header">
+            <!-- Outer for Contrast -->
+            <transition name="fade">
+                <a class="outer-overlay" v-show="isOpen" @click.prevent="toggleMenu">
+                    <div class="close-button">
+                        <span></span>
+                        <span></span>
+                    </div>
                 </a>
-                <!-- Slide Nav -->
-                <div class="header__nav-wrapper">
-                    <div class="header__nav-main">
-                        <!-- Content Buttons / Links -->
-                        <div class="content">
-                            <ul class="menu-access">
-                                <li><a class="linkDark" href="/">Order</a></li>
-                                <li><a class="light" href="/">Login</a></li>
-                            </ul>
-    
-                            <div class="navigation">
-                                <h4><a href="/">Top</a></h4>
-                                <!-- Site links -->
-                                <ul>
-                                    <li><a href="/">--Concept</a></li>
-                                    <li><a href="/">--Services</a></li>
-                                    <li><a href="/">--Ideas</a></li>
-                                    <li><a href="/">--Product</a></li>
-                                    <li><a href="/">--How to</a></li>
-                                    <li><a href="/">--Visit</a></li>
+            </transition>
+
+            <div class="header__inner flex flex-jc-sb">
+                <!-- Left Side Nav -->
+                <nav class="header__nav-main">
+                    <a href="/" class="header__nav-hamburger" @click.prevent="toggleMenu">
+                        <span></span><span></span><span></span>
+                    </a>
+                    <!-- Slide Nav -->
+                    <div class="header__nav-wrapper" :class="{showLeft: isOpen}">
+                        <div class="header__nav-main">
+                            <!-- Content Buttons / Links -->
+                            <div class="content">
+                                <ul class="menu-access">
+                                    <li><a class="linkDark" href="/">Order</a></li>
+                                    <li><a class="light" href="/">Login</a></li>
                                 </ul>
-                            </div>
-                        </div>
-                        <!-- Nav Footer -->
-                        <div class="footer">
-                            <div class="footer__links">
-                                <ul>
-                                    <li><a href="/">Inquiry</a></li>
-                                    <li><a href="/">About</a></li>
-                                    <li><a href="/">Privacy Policy</a></li>
-                                    <li><a href="/">Specified Commercial Transaction Law</a></li>
-                                </ul>
-                            </div>
-                            <div class="footer__logo ">
-                                <div class="header__logo">
-                                    <a href="/"><img src="/assets/images/logo.png" alt="Logo"></a>
+
+                                <div class="navigation">
+                                    <h4><a href="/">Top</a></h4>
+                                    <!-- Site links -->
+                                    <ul>
+                                        <li><a href="/">--Concept</a></li>
+                                        <li><a href="/">--Services</a></li>
+                                        <li><a href="/">--Ideas</a></li>
+                                        <li><a href="/">--Product</a></li>
+                                        <li><a href="/">--How to</a></li>
+                                        <li><a href="/">--Visit</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="footer__socials">
-                                <ul>
-                                    <li><a href="/"><i class="icofont-twitter"></i></a>
-                                    </li>
-                                    <li><a href="/"><i class="icofont-facebook"></i></a>
-                                    </li>
-                                    <li><a href="/"><i class="icofont-instagram"></i></a>
-                                    </li>
-                                </ul>
+                            <!-- Nav Footer -->
+                            <div class="footer">
+                                <div class="footer__links">
+                                    <ul>
+                                        <li><a href="/">Inquiry</a></li>
+                                        <li><a href="/">About</a></li>
+                                        <li><a href="/">Privacy Policy</a></li>
+                                        <li><a href="/">Specified Commercial Transaction Law</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer__logo ">
+                                    <div class="header__logo">
+                                        <a href="/"><img src="/assets/images/logo.png" alt="Logo"></a>
+                                    </div>
+                                </div>
+                                <div class="footer__socials">
+                                    <ul>
+                                        <li><a href="/"><i class="icofont-twitter"></i></a>
+                                        </li>
+                                        <li><a href="/"><i class="icofont-facebook"></i></a>
+                                        </li>
+                                        <li><a href="/"><i class="icofont-instagram"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
 
-            <!-- Center Logo -->
-            <a href="/" class="header__logo"><img src="/assets/images/logo.png" alt="Mark it Logo"></a>
+                <!-- Center Logo -->
+                <a href="/" class="header__logo"><img src="/assets/images/logo.png" alt="Mark it Logo"></a>
 
-            <!-- Right Side Nav -->
-            <nav class="header__nav-right">
-                <!-- Side access -->
-                <a href="/"><img src="/assets/images/ico-user.png" alt=""></a>
-                <a href="/"><img src="/assets/images/ico-cart.png" alt=""></a>
-            </nav>
-        </div>
-    </header>
+                <!-- Right Side Nav -->
+                <nav class="header__nav-right">
+                    <!-- Side access -->
+                    <a href="/"><img src="/assets/images/ico-user.png" alt=""></a>
+                    <a href="/"><img src="/assets/images/ico-cart.png" alt=""></a>
+                </nav>
+            </div>
+        </header>
+    </div>
 
 
     <script src="/app/js/app.js"></script>
