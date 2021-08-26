@@ -18,7 +18,7 @@
     &__logo {
         display: inline-block;
         width: toRem(116);
-        margin: 0 auto;
+        transform: translateX(25%);
 
         @include breakpoint-down(medium) {
             width: toRem(80);
@@ -79,7 +79,6 @@
             left: 0;
             height: 100vh;
             z-index: 200;
-            overflow-y: hidden; // For scrolling
             -webkit-overflow-scrolling: touch;
             transform: translateX(-100%);
             visibility: hidden;

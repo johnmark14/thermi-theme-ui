@@ -2,7 +2,14 @@
 
     &-slider {
         position: relative;
-        height: 95vh;
+        height: 90vh;
+
+        @include breakpoint-down(medium) {
+            height: 60vh;
+        }
+        @include breakpoint-down(small) {
+            height: 52vh;
+        }
 
         .swiper {
             width: 100%;
@@ -22,6 +29,7 @@
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    object-position: center;
                 }
             }
         }
@@ -32,6 +40,15 @@
         bottom: -120px;
         right: -10px;
         z-index: 99;
+
+        @include breakpoint-down(medium) {
+            bottom: -85px;
+            right: 2px;
+        }
+        @include breakpoint-down(small) {
+            bottom: -70px;
+            right: 10px;
+        }
 
         .btn-oval {
             box-sizing: border-box;
@@ -54,6 +71,19 @@
             padding: 0 45px 0 69px;
             transition: background-color 0.3s;
 
+            @include breakpoint-down(medium) {
+                width: 180px;
+                height: 180px;
+                font-size: 20px;
+                padding: 0 40px;
+            }
+            @include breakpoint-down(small) {
+                width: 140px;
+                height: 140px;
+                font-size: 1rem;
+                padding: 0 27px;
+            }
+
             &:hover {
                 background-color: $darkGray1;
             }
@@ -68,6 +98,10 @@
                     width: 32px;
                     height: 12px;
                     display: inline-block;
+
+                    @include breakpoint-down(medium) {
+                        width: 28px;
+                    }
                 }
             }
         }

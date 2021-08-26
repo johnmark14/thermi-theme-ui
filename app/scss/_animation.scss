@@ -1,19 +1,20 @@
 @keyframes fade-in {
     from {
-        // opacity: 0;
         background-color: rgba($color: $black, $alpha: 0);
+        
         
     }
 
     to {
-        // opacity: .75;
         background-color: rgba($color: $black, $alpha: .75);
+       
     }
 }
 @keyframes fade-out {
     from {
         opacity: 1;
         background-color: rgba($color: $black, $alpha: .75);
+        
     }
 
     to {
@@ -30,3 +31,44 @@
 .fade-leave-active {
     animation: fade-out .5s ease forwards;
 }
+
+// /////////////////////////////////////////////////////////////////////////////// //
+
+@keyframes modal-in {
+    from {
+        opacity: 0;
+        // background-color: rgba($color: $black, $alpha: 0);
+        background-color: rgba(102, 102, 102, 0);
+        
+    }
+
+    to {
+        opacity: 1;
+        // background-color: rgba($color: $black, $alpha: .75);
+        background-color: rgba(102, 102, 102, 1);
+    }
+}
+@keyframes modal-out {
+    from {
+        opacity: 1;
+        // background-color: rgba($color: $black, $alpha: .75);
+        background-color: rgba(102, 102, 102, 1);
+    }
+
+    to {
+        opacity: 0;
+        // background-color: rgba($color: $black, $alpha: 0);
+        background-color: rgba(102, 102, 102, 0);
+    }
+}
+
+.modal-enter-active{
+    animation: modal-in .5s ease forwards;
+}
+
+
+.modal-leave-active {
+    animation: modal-out .5s ease forwards;
+}
+
+

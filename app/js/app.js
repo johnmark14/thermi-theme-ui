@@ -11,6 +11,9 @@ const App = {
         },
         toggleModal() {
             this.modalOpen = !this.modalOpen
+        },
+        stopModalVideo() {
+            player.stopVideo()
         }
     },
 }

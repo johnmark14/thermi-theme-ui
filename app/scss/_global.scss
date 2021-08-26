@@ -87,6 +87,10 @@ main {
 // Section Padding
 .section-padding {
     padding-bottom: 152px;
+
+    @include breakpoint-down(small) {
+        padding-bottom: 130px;
+    }
 }
 
 // Shell styling

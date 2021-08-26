@@ -151,18 +151,16 @@
                                 <img src="assets/images/thumbnail_500x.jpg" alt="">
                             </a>
 
-                            <transition name="fade">
-                                <div class="modal" v-show="modalOpen" @click="toggleModal">
+                            <transition name="modal">
+                                <div class="modal" v-show="modalOpen" @click="toggleModal(); stopModalVideo();"
+                                    @wheel.prevent @touchmove.prevent @scroll.prevent>
                                     <div class="modal-video">
-                                        <a href="/" class="modal-closebtn" @click.stop.prevent="toggleModal">
+                                        <a href="https://www.youtube.com/embed/2XuXBxcXO_Q" class="modal-closebtn"
+                                            @click.stop.prevent="toggleModal(); stopModalVideo();">
                                             <span></span>
                                             <span></span>
                                         </a>
-                                        <iframe src="https://www.youtube.com/embed/2XuXBxcXO_Q"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowfullscreen>
-                                        </iframe>
+                                        <div id="modaliframe"></div>
                                     </div>
                                 </div>
                             </transition>
@@ -173,6 +171,7 @@
         </main>
     </div>
     <script src="app/js/app.js"></script>
+    <script src="app/js/iframe.js"></script>
     <script src="app/js/swiper.js"></script>
 </body>
 
