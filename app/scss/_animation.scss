@@ -1,27 +1,32 @@
 @keyframes fade-in {
     from {
-        opacity: 0;
+        // opacity: 0;
+        background-color: rgba($color: $black, $alpha: 0);
+        
     }
 
     to {
-        opacity: .75;
+        // opacity: .75;
+        background-color: rgba($color: $black, $alpha: .75);
     }
 }
 @keyframes fade-out {
     from {
-        opacity: .75;
+        opacity: 1;
+        background-color: rgba($color: $black, $alpha: .75);
     }
 
     to {
         opacity: 0;
+        background-color: rgba($color: $black, $alpha: 0);
     }
 }
 
 .fade-enter-active{
-    animation: fade-in .3s ease forwards;
+    animation: fade-in .5s ease forwards;
 }
 
 
 .fade-leave-active {
-    animation: fade-out .3s ease forwards;
+    animation: fade-out .5s ease forwards;
 }

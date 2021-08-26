@@ -259,9 +259,10 @@
         height: 100vh;
         top: 0;
         left: 0;
-        opacity: .75;
-        background-color: $black;
+        // opacity: .75;
+        background-color: rgba($color: $black, $alpha: .75);
         cursor: default;
+        z-index: 200;
 
         .close-button {
             width: 100%;

@@ -1,12 +1,16 @@
 const App = {
     data() {
         return {
-            isOpen: false
+            isOpen: false,
+            modalOpen: false
         }
     },
     methods: {
         toggleMenu() {
             this.isOpen = !this.isOpen
+        },
+        toggleModal() {
+            this.modalOpen = !this.modalOpen
         }
     },
 }

@@ -1,0 +1,104 @@
+.plaintext {
+    &-container {
+        width: 65.2%;
+        margin: auto;
+        grid-column-gap: 25px;
+    }
+
+    &-title {
+        font-size: toRem(24);
+        font-weight: 500;
+        margin-bottom: 47px;
+        text-align: center;
+    }
+
+    &-description {
+        padding-left: 50px;
+        text-align: left;
+        p {
+            text-transform: uppercase;
+            line-height: 2;
+            font-size: toRem(14);
+            font-weight: 500;
+
+            &:not(:last-child) {
+                padding-bottom: 15px;
+            }
+
+        }
+    }
+
+    &-demo {
+        width: 80%;
+        img {
+            width: 100%;
+        }
+
+        .modal {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba($color: $black, $alpha: .75);
+            z-index: 999;
+
+            &-closebtn {
+                position: absolute;
+                top: 30px;
+                right: 60px;
+                background-color: $white;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding-left: 2px;
+                box-sizing: border-box;
+
+                span {
+                    display: inline-block;
+                    box-sizing: border-box;
+                    background-color: $darkGray;
+                    width: 20px;
+                    height: 2px;
+                    transform-origin: 5px 1px;
+
+
+                    &:not(:last-child) {
+                        margin-bottom: 5px;
+                    }
+
+                    &:first-child {
+                        transform: rotate(45deg);
+                    }
+
+
+                    &:last-child {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+
+            &-video {
+                position: relative;
+                height: 100%;
+                width: 100%;
+
+                iframe {
+                    width: 876px;
+                    height: 438px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+
+}
