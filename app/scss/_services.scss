@@ -1,0 +1,46 @@
+.section-services {
+    background-color: $lighterGray;
+   
+
+    .services-title {
+        font-size: toRem(35);
+        font-weight: 500;
+        letter-spacing: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        padding-bottom: 80px;
+    }
+
+    .services-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .services {
+
+            display: flex;
+            flex-direction: column;
+            &-label {
+                flex-grow: 1;
+                background-color: gray;
+            }
+
+            &-options {
+                flex-grow: 3;
+                background-color: green;
+                >.option {
+                    display: flex;
+                }
+            }
+
+            &-cta {
+                flex-grow: 2;
+                background-color: hotpink;
+            }
+        }
+    }
+}
