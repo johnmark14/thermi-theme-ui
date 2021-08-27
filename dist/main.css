@@ -37,6 +37,7 @@ a, a:visited, a:hover {
 
 ul {
   padding: 0;
+  margin: 0;
 }
 
 ul li {
@@ -292,6 +293,114 @@ main {
 
 .header__nav-right a:not(:last-child) {
   padding-right: 18px;
+}
+
+.header__nav-main .main-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 310px;
+  height: 100vh;
+  background-color: #FFFFFF;
+  border-right: 1px solid black;
+  overflow-y: scroll;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.header__nav-main .main-content .content-btn {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  padding: 20px 35px;
+}
+
+.header__nav-main .main-content .content-btn > a {
+  display: block;
+  color: #FFFFFF;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 16px 0;
+  -webkit-transition: color .5s ease-in-out,background .5s ease-in-out,border-color  .5s ease-in-out,opacity .5s ease-in-out;
+  transition: color .5s ease-in-out,background .5s ease-in-out,border-color  .5s ease-in-out,opacity .5s ease-in-out;
+}
+
+.header__nav-main .main-content .content-btn > a:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.header__nav-main .main-content .content-btn .btn-login {
+  background-color: #5E5E5E;
+}
+
+.header__nav-main .main-content .content-btn .btn-login:hover {
+  background-color: #000;
+}
+
+.header__nav-main .main-content .content-btn .btn-order {
+  color: #5E5E5E;
+  background-color: #f7f7f7;
+}
+
+.header__nav-main .main-content .content-btn .btn-order:hover {
+  color: #FFFFFF;
+  background-color: #000;
+}
+
+.header__nav-main .main-content .content-nav {
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  padding: 20px 35px 100px 35px;
+}
+
+.header__nav-main .main-content .content-nav .nav-header {
+  font-size: 1.625rem;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.header__nav-main .main-content .content-nav .nav-header:hover {
+  text-decoration: underline;
+}
+
+.header__nav-main .main-content .content-nav .nav-links li {
+  padding-left: 10px;
+}
+
+.header__nav-main .main-content .content-nav .nav-links li:not(:last-child) {
+  margin-bottom: 22px;
+}
+
+.header__nav-main .main-content .content-nav .nav-links li a {
+  color: inherit;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.header__nav-main .main-content .content-nav .nav-links li a:hover {
+  color: #5E5E5E;
+  text-decoration: underline;
+}
+
+.header__nav-main .main-content .content-footer {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 20px 35px;
 }
 
 .header .outer-overlay {
