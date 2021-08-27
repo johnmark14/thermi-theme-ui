@@ -13,7 +13,7 @@
     }
 
     &__nav {
-        // Hambuger icon
+        // Hamburger icon
         &-hamburger > span {
             display: block;
             width: 27px;
@@ -76,11 +76,16 @@
 
                 display: flex;
                 flex-direction: column;
+                transform: translateX(-100%);
+
+                .showContent {
+                    transform: translateX(0);
+                }
                 
                 .content-btn {
                     flex-grow: 1;
                     text-align: center;
-                    padding: 20px 35px;
+                    padding: 50px 35px 26px 35px;
                     
                     // Buttons Login/Order Global
                     > a{
@@ -157,10 +162,60 @@
                         }
                     }
                 }
-
                 .content-footer {
                     flex-grow: 1;
-                    padding: 20px 35px;
+                    padding: 26px 35px;
+                    background-color: $lightGray1;
+
+                    .footer-links {
+                        padding: 0 20px;
+                        > li {
+                            &:not(:last-child) {
+                                margin-bottom: 10px;
+                            }
+                            a {
+                                font-size: toRem(14);
+                                color: $darkGray;
+                                text-transform: capitalize;
+                                transition: color .3s;
+
+                                &:hover {
+                                    color: $darkGray;
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+
+                    .footer-brand{
+                        padding-top: 80px;
+                        display: flex;
+                        flex-direction: column;
+                        margin: auto;
+                        align-items: center;
+
+                        a > img {
+                            width: toRem(116);
+                        }
+
+                        .socials {
+                            display: flex;
+                            width: 50%;
+                            justify-content: space-around;
+                            padding-top: 20px;
+
+                            a {
+                                color: $lightGray;
+                                font-size: toRem(22);
+                                transition: color .3s;
+
+                                &:hover {
+                                    color: $darkGray;
+                                }
+                            }
+                        }
+                    } /* .footer-brand */
+
                 }
             }
         }
