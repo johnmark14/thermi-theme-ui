@@ -1,6 +1,6 @@
 .header {
     background-color: $white;
-    position: fixed;
+    position: sticky;
     z-index: 100;
     width: 100%;
     
@@ -9,25 +9,9 @@
         @include breakpoint-down(medium) {
             padding: toRem(18) toRem(20); // Pading for left and right
         }
-        align-items: flex-start;
-        flex-wrap: wrap;
-        
+        align-items: center;
     }
 
-    // Nav Logo/Brand
-    &__logo {
-        display: inline-block;
-        width: toRem(116);
-        transform: translateX(25%);
-
-        @include breakpoint-down(medium) {
-            width: toRem(80);
-        }
-
-        img {
-            width: 100%;
-        }
-    }
     &__nav {
         // Hambuger icon
         &-hamburger > span {
@@ -48,26 +32,32 @@
                 
             }
         }
+
+         // Nav Logo/Brand
+        &-logo {
+            display: block;
+            width: toRem(116);
+            transform: translateX(25%);
+
+            @include breakpoint-down(medium) {
+                width: toRem(80);
+            }
+
+            img {
+                width: 100%;
+            }
+        }
         // Right icons user and cart
         &-right {
             a {
-                display: inline-block;
-                &:not(:last-child) {
-                    margin-right: 30px;
-
-                    @include breakpoint-down(medium) {
-                        margin-right: 14px;
-                    }
+                color: $lightGray;
+                
+                i {
+                    font-size: toRem(26);
                 }
-                img {
-                    width: 24px;
-                    height: 24px;
-                    
-                    @include breakpoint-down(medium) {
-                        width: 20px;
-                        height: 20px;
 
-                    }
+                &:not(:last-child) {
+                    padding-right: 18px;
                 }
             }
         }

@@ -9,12 +9,18 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- Icon Fonts -->
-    <link rel="stylesheet" href="dist/icofont.min.css">
+
+    <!-- Material Icon Fonts -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+
+    <!-- John Custom CSS -->
     <link rel="stylesheet" href="dist/main.css">
+
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@next"></script>
     <title>MARK IT BY KINTO</title>
@@ -39,16 +45,49 @@
                     <a href="/" class="header__nav-hamburger" @click.prevent="toggleMenu">
                         <span></span><span></span><span></span>
                     </a>
-                </nav>
 
+                    <div class="main-content" style="display: none;">
+                        <div class="content-btn">
+                            <a href="/" class="btn-login"></a>
+                            <a href="/" class="btn-order"></a>
+                        </div>
+                        <div class="content-nav">
+                            <h4 class="nav-header">TOP</h4>
+                            <ul class="nav-links">
+                                <li><a href="/" class="links">-- concept</a></li>
+                                <li><a href="/" class="links">-- services</a></li>
+                                <li><a href="/" class="links">-- ideas</a></li>
+                                <li><a href="/" class="links">-- products</a></li>
+                                <li><a href="/" class="links">-- how to</a></li>
+                                <li><a href="/" class="links">-- visit</a></li>
+                            </ul>
+                        </div>
+                        <div class="content-footer">
+                            <ul class="footer-links">
+                                <li><a href="">inquiry</a></li>
+                                <li><a href="">about purchase</a></li>
+                                <li><a href="">privacy</a></li>
+                                <li><a href="">specified commercial transaction law</a></li>
+                            </ul>
+                            <div class="footer-brand">
+                                <a href="/" class="logo"><img src="assets/images/logo.png" alt="logo"></a>
+                                <ul class="socials">
+                                    <li><a href="/"><span><i class="icofont-twitter"></i></span></a></li>
+                                    <li><a href="/"><span><i class="icofont-facebook"></i></span></a></li>
+                                    <li><a href="/"><span><i class="icofont-instagram"></i></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
                 <!-- Center Logo -->
-                <a href="/" class="header__logo"><img src="assets/images/logo.png" alt="Mark it Logo"></a>
+                <a href="/" class="header__nav-logo"><img src="assets/images/logo.png" alt="Mark it Logo"></a>
 
                 <!-- Right Side Nav -->
                 <nav class="header__nav-right">
                     <!-- Side access -->
-                    <a href="/"><img src="assets/images/ico-user.png" alt=""></a>
-                    <a href="/"><img src="assets/images/ico-cart.png" alt=""></a>
+                    <a href="/"><i class="material-icons-outlined">person_outline</i></a>
+                    <a href="/"><i class="material-icons-outlined">local_mall</i></a>
                 </nav>
             </div>
         </header>
