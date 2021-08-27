@@ -229,6 +229,7 @@ main {
   background-color: #FFFFFF;
   position: -webkit-sticky;
   position: sticky;
+  top: 0;
   z-index: 100;
   width: 100%;
 }
@@ -314,9 +315,11 @@ main {
           flex-direction: column;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+  -webkit-transition: all .3s ease .1s;
+  transition: all .3s ease .1s;
 }
 
-.header__nav-main .main-content .showContent {
+.header__nav-main .main-content.showLeft {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -327,6 +330,12 @@ main {
           flex-grow: 1;
   text-align: center;
   padding: 50px 35px 26px 35px;
+}
+
+@media (max-width: 39.9375em) {
+  .header__nav-main .main-content .content-btn {
+    padding: 35px 20px 20px 20px;
+  }
 }
 
 .header__nav-main .main-content .content-btn > a {
@@ -381,6 +390,12 @@ main {
   text-decoration: underline;
 }
 
+@media (max-width: 39.9375em) {
+  .header__nav-main .main-content .content-nav .nav-header {
+    font-size: 1.5rem;
+  }
+}
+
 .header__nav-main .main-content .content-nav .nav-links li {
   padding-left: 10px;
 }
@@ -401,6 +416,12 @@ main {
 .header__nav-main .main-content .content-nav .nav-links li a:hover {
   color: #5E5E5E;
   text-decoration: underline;
+}
+
+@media (max-width: 39.9375em) {
+  .header__nav-main .main-content .content-nav .nav-links li a {
+    font-size: 1rem;
+  }
 }
 
 .header__nav-main .main-content .content-footer {
@@ -493,7 +514,7 @@ main {
 .header .outer-overlay .close-button span {
   position: absolute;
   top: 50px;
-  left: 355px;
+  left: 345px;
   width: 27px;
   height: 2px;
   background-color: #FFFFFF;
