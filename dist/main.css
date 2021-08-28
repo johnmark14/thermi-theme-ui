@@ -137,6 +137,55 @@ main {
   }
 }
 
+.big-btn {
+  display: block;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 50px 0;
+  width: 600px;
+  margin: 95px auto 0 auto;
+  font-size: 1.5rem;
+  background-color: #5E5E5E;
+  border-radius: 5px;
+  -webkit-transition: color .5s ease-in-out,background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+  transition: color .5s ease-in-out,background .5s ease-in-out,border-color .5s ease-in-out,opacity .5s ease-in-out;
+}
+
+.big-btn:hover {
+  background-color: #757171;
+}
+
+.big-btn span {
+  color: #fff;
+  text-align: left;
+}
+
+.big-btn span::after {
+  content: '';
+  background: url(https://cdn.shopify.com/s/files/1/0076/8747/1170/t/97/assets/ico-arrow-right@2x.png?v=2691161101697521585) no-repeat 0 0;
+  background-size: 100% 100%;
+  width: 32px;
+  height: 12px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+@media (max-width: 63.9375em) {
+  .big-btn span::after {
+    margin-left: 15px;
+    width: 28px;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .big-btn {
+    font-size: 1.125rem;
+    font-weight: 400;
+    padding: 30px 0;
+    width: 300px;
+  }
+}
+
 @-webkit-keyframes fade-in {
   from {
     background-color: rgba(0, 0, 0, 0);
