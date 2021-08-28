@@ -994,6 +994,7 @@ main {
       -ms-grid-row-align: center;
       align-self: center;
   padding: 30px;
+  width: 50%;
 }
 
 @media (max-width: 39.9375em) {

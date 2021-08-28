@@ -87,6 +87,7 @@
                 flex-grow: 2;
                 align-self: center;
                 padding: 30px;
+                width: 50%;
                 
                 @include breakpoint-down(small) {
                     width: 90%;
