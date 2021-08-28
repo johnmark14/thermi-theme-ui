@@ -86,7 +86,7 @@
             &-cta {
                 flex-grow: 2;
                 align-self: center;
-                padding: 30px;
+                padding-top: 30px;
                 width: 50%;
                 
                 @include breakpoint-down(small) {

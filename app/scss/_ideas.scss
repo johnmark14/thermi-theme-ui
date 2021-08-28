@@ -1,5 +1,12 @@
 .ideas {
 
+    &-shell.shell {
+        
+        @include breakpoint-down(small) {
+            padding: 0;
+        }
+    }
+
     &-imgs {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -17,7 +24,7 @@
     }
 
     &-btn {
-        padding: 70px;
+        padding: 70px 70px 0 70px;
         text-align: center;
         >a {
             font-size: toRem(18);
