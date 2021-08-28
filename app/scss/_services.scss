@@ -1,45 +1,113 @@
 .section-services {
     background-color: $lighterGray;
    
-
-    .services-title {
-        font-size: toRem(35);
-        font-weight: 500;
-        letter-spacing: 5px;
-        text-align: center;
-        text-transform: uppercase;
-        padding-bottom: 80px;
-    }
-
     .services-card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        box-sizing: border-box;
 
-        img {
-            width: 100%;
-            object-fit: cover;
+        @include breakpoint-down(small) {
+            grid-template-columns: 1fr;
+        }
+
+        background-color: $white;
+        border: .5px solid $lightGray1;
+        
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        .services-img {
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
 
         .services {
-
             display: flex;
             flex-direction: column;
+            padding: 40px;
+
             &-label {
                 flex-grow: 1;
-                background-color: gray;
+                .services{
+                    &-number {
+                        font-size: toRem(24);
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        padding-bottom: 20px;
+                        letter-spacing: 2px;
+                    }
+
+                    &-description {
+                        letter-spacing: 1px;
+                        font-weight: 300;
+                    }
+                }
             }
 
             &-options {
                 flex-grow: 3;
-                background-color: green;
+                margin-top: 20px;
                 >.option {
                     display: flex;
+                    flex-wrap: wrap;
+
+                    li {
+                        flex-basis: 70px;
+                        margin-bottom: 30px;
+                        border: 1.5px solid $lightGray1;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        padding: 5px;
+
+                        &:not(:last-child) {
+                            margin-right: 20px;
+                        }
+
+                        img {
+                            width: 100%;
+                        }
+
+                        @include breakpoint-down(small) {
+                            padding: 2px;
+
+                            &:not(:last-child) {
+                                margin-right: 15px;
+                            }
+                        }
+                    }
                 }
             }
 
             &-cta {
                 flex-grow: 2;
-                background-color: hotpink;
+                align-self: center;
+                padding: 30px;
+                
+                @include breakpoint-down(small) {
+                    width: 90%;
+                }
+
+                a {
+                    color: $white;
+                    display: block;
+                    font-weight: 500;
+                    background-color: $darkGray;
+                    padding: 16px 0;
+                    text-align: center;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    transition: color .5s ease-in-out,background .5s ease-in-out,border-color 
+                        .5s ease-in-out,opacity .5s ease-in-out;
+
+                    &:hover {
+                        background-color: $black;
+                    }
+                }
             }
         }
     }
