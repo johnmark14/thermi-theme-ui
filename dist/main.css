@@ -1019,3 +1019,45 @@ main {
 .section-services .services-card .services-cta a:hover {
   background-color: #000;
 }
+
+.ideas-imgs {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+@media (max-width: 39.9375em) {
+  .ideas-imgs {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.ideas-imgs .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ideas-btn {
+  padding: 70px;
+  text-align: center;
+}
+
+.ideas-btn > a {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #989898;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+}
+
+.ideas-btn > a:hover {
+  color: #5E5E5E;
+}
