@@ -1,0 +1,26 @@
+.social {
+
+    &-info {
+        margin-top: -40px;
+        text-align: center;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 1px;
+    }
+
+    &-images {
+        padding-top: 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(224.833px, 1fr));
+        
+        @include breakpoint-down(medium) {
+            grid-template-columns: repeat(auto-fit, minmax(224.833px, 449.766px));
+        }
+        
+        grid-row-gap: 10px;
+
+        .social-img img {
+            width: 100%;
+        }
+    }
+}
