@@ -1338,3 +1338,101 @@ main {
     top: 160px;
   }
 }
+
+.visit-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #EAAA00;
+}
+
+@media (max-width: 63.9375em) {
+  .visit-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.visit-image {
+  width: 60%;
+}
+
+@media (max-width: 63.9375em) {
+  .visit-image {
+    width: 100%;
+  }
+}
+
+.visit-image img {
+  width: 100%;
+  display: block;
+}
+
+.visit-info {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (max-width: 63.9375em) {
+  .visit-info {
+    width: 100%;
+  }
+}
+
+.visit-info .info-logo {
+  padding: 90px 0 50px 0;
+  width: 230px;
+}
+
+.visit-info .info-logo img {
+  display: block;
+  width: 100%;
+}
+
+.visit-info .info-description {
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 1.0625rem;
+  letter-spacing: 1px;
+  font-weight: 500;
+  line-height: 28px;
+  padding: 0 20px;
+}
+
+.visit-info .info-btn {
+  margin: 60px 0 20px 0;
+  width: 300px;
+  text-align: center;
+}
+
+.visit-info .info-btn a {
+  padding: 24px 0;
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background-color: #f7f7f7;
+  color: #989898;
+}
+
+.visit-info .info-btn a span::after {
+  content: '';
+  background: url(https://cdn.shopify.com/s/files/1/0076/8747/1170/t/97/assets/markit_visit_ico-arrow-right-gray@2x.png?v=4191350123075320431) no-repeat 0 0;
+  background-size: 100% 100%;
+  width: 32px;
+  height: 12px;
+  display: inline-block;
+  margin-left: 10px;
+}
