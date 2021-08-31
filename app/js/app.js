@@ -2,7 +2,9 @@ const App = {
     data() {
         return {
             isOpen: false,
-            modalOpen: false
+            modalOpen: false,
+            scTimer: 0,
+            scY: 0,
         }
     },
     methods: {
@@ -14,7 +16,13 @@ const App = {
         },
         stopModalVideo() {
             player.stopVideo()
-        }
+        },
+        toTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        },
     },
 }
 

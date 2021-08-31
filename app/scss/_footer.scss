@@ -1,0 +1,166 @@
+.footer {
+
+    &-shell {
+        background-color: $lightGray1;
+        padding-top: 60px;
+        
+        @include breakpoint-down(small) {
+            padding-top: 10px;
+        }
+    }
+
+    &-back {
+        margin-top: 40px;
+        text-align: center;
+        padding-bottom: 20px;
+        position: relative;
+
+        a {
+            color: $darkGray1;
+            text-transform: uppercase;
+            transition: opacity .3s;
+
+
+            &::after {
+                content: '';
+                background: url(https://cdn.shopify.com/s/files/1/0076/8747/1170/t/97/assets/icon-angle@2x.png?v=12070413865707156474) no-repeat 0 0;
+                background-size: 100% 100%;
+                position: absolute;
+                top: -20px;
+                width: 15px;
+                height: 8px;
+                display: inline-block;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &:hover {
+                text-decoration: underline;
+                opacity: .7;
+            }
+        }
+    }
+
+    &-content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 20px;
+
+        @include breakpoint-down(small) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+        }
+
+        .footer-left {
+            grid-column: 2/5;
+
+            @include breakpoint-down(small) {
+               grid-area: 1 / 1;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            .logo {
+                display: inline block;
+                width: 130px;
+
+                @include breakpoint-down(small) {
+                    display: none;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+
+            .socials {
+                display: flex;
+                justify-content: flex-start;
+                
+                @include breakpoint-down(small) {}
+
+                li {
+                    &:not(:last-child) {
+                        padding-right: 30px;
+                    }
+                }
+
+                a {
+                    color: $lightGray;
+                    font-size: toRem(22);
+                    transition: color .3s;
+
+                    &:hover {
+                        color: $darkGray;
+                    }
+                }
+            }
+
+        } /* Footer Left */
+
+        .footer-right {
+            grid-column: 8/12;
+            position: relative;
+            padding: 0 30px;
+
+            @include breakpoint-down(small) {
+                grid-area: 2 / 1;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 35%;
+                width: 1px;
+                background-color: $lightGray;
+
+                @include breakpoint-down(small) {
+                    left: 45%;
+                }
+            }
+
+            ul {
+                height: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+
+                @include breakpoint-down(small) {
+                    grid-gap: 10px;
+                }
+
+                li {
+                    
+                    a {
+                        font-size: toRem(12);
+                        color: $lightGray;
+                    }
+                }
+            }
+        } /* Footer right*/
+    } /* Footer Content */
+
+    &-bottom {
+        padding: 60px 0 20px 0;
+        text-align: center;
+        font-size: toRem(12);
+
+        .logo {
+            display: inline-block;
+            padding-bottom: 10px;
+            text-align: center;
+            width: 130px;
+            display: none;
+
+            @include breakpoint-down(small) {
+                display: inline-block;
+                padding-bottom: 20px;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
