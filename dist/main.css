@@ -190,6 +190,7 @@ main {
 @-webkit-keyframes fade-in {
   from {
     background-color: rgba(0, 0, 0, 0);
+    display: block;
   }
   to {
     background-color: rgba(0, 0, 0, 0.75);
@@ -199,6 +200,7 @@ main {
 @keyframes fade-in {
   from {
     background-color: rgba(0, 0, 0, 0);
+    display: block;
   }
   to {
     background-color: rgba(0, 0, 0, 0.75);
@@ -213,6 +215,7 @@ main {
   to {
     opacity: 0;
     background-color: rgba(0, 0, 0, 0);
+    display: none;
   }
 }
 
@@ -224,6 +227,7 @@ main {
   to {
     opacity: 0;
     background-color: rgba(0, 0, 0, 0);
+    display: none;
   }
 }
 
@@ -569,6 +573,10 @@ main {
   background-color: rgba(0, 0, 0, 0.75);
   cursor: default;
   z-index: 200;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.3s ease;
+  transition: visibility 0s, opacity 0.3s ease;
 }
 
 .header .outer-overlay .close-button {
@@ -610,6 +618,11 @@ main {
 .header .outer-overlay .close-button span:last-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.header .showOverlay {
+  visibility: visible;
+  opacity: .75;
 }
 
 .intro-slider {

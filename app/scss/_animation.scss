@@ -1,7 +1,7 @@
 @keyframes fade-in {
     from {
         background-color: rgba($color: $black, $alpha: 0);
-        
+        display: block;
         
     }
 
@@ -20,6 +20,7 @@
     to {
         opacity: 0;
         background-color: rgba($color: $black, $alpha: 0);
+        display: none;
     }
 }
 

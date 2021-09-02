@@ -36,14 +36,12 @@
         <!-- The Header -->
         <header class="header">
             <!-- Outer for Contrast -->
-            <transition name="fade">
-                <a class="outer-overlay" v-show="isOpen" @click.prevent="toggleMenu">
-                    <div class="close-button">
-                        <span></span>
-                        <span></span>
-                    </div>
-                </a>
-            </transition>
+            <a class="outer-overlay" :class="{ showOverlay: isOpen }" @click.prevent="toggleMenu">
+                <div class="close-button">
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
             <div class="header__inner flex flex-jc-sb">
                 <!-- Left Side Nav -->
                 <nav class="header__nav-main">

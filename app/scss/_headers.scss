@@ -234,7 +234,7 @@
             }
         }
     } // header__nav
-
+    
     .outer-overlay {
         position: fixed;
         width: 100vw;
@@ -245,6 +245,9 @@
         background-color: rgba($color: $black, $alpha: .75);
         cursor: default;
         z-index: 200;
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.3s ease;
 
         .close-button {
             width: 100%;
@@ -281,6 +284,11 @@
                 }
             }
         }
+    }
+    // Show when click
+    .showOverlay {
+        visibility: visible;
+        opacity: .75;
     }
 } // Header
 
