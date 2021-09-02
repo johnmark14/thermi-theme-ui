@@ -32,6 +32,20 @@
                     object-position: center;
                 }
             }
+
+            .small-img {
+                display: none;
+            }
+
+            @include breakpoint-down(small) {
+                .small-img {
+                    display: block;
+                }
+
+                .bg-img {
+                    display: none;
+                }
+            }
         }
     }
 
